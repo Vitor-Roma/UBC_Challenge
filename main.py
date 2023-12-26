@@ -4,7 +4,6 @@ from models import Student
 import pandas as pd
 import numpy as np
 import logging
-from datetime import datetime
 from pprint import pprint
 
 
@@ -25,7 +24,6 @@ def main():
             try:
                 if student_solr_core.search(query):
                     pprint(f'{result} já existe')
-                    continue
             except Exception as err:
                 logging.error('Erro na query do SOLR')
             try:
