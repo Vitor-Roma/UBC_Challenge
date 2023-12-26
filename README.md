@@ -1,4 +1,4 @@
-# UBC_Challenge: Desafio Técnico: Importação de Dados para o Solr
+# UBC_Challenge: Desafio Técnico para importação de Dados para o Solr
 
 ## Dependências
 - Docker
