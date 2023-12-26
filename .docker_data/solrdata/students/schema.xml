@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
+<schema name="student-schema" version="1.6">
+    <fields>
+        <field name="id" type="int" indexed="true" stored="true" required="true"/>
+        <field name="name" type="string" indexed="true" stored="true" required="true"/>
+        <field name="age" type="int" indexed="true" stored="true" required="true"/>
+        <field name="year" type="int" indexed="true" stored="true" required="true"/>
+        <field name="grade" type="float" indexed="true" stored="true" required="true"/>
+        <field name="address" type="string" indexed="true" stored="true" required="true"/>
+        <field name="father_name" type="string" indexed="true" stored="true" required="true"/>
+        <field name="mother_name" type="string" indexed="true" stored="true" required="true"/>
+        <field name="birthdate" type="date" indexed="true" stored="true" required="true"/>
+    </fields>
+    <uniqueKey>id</uniqueKey>
+    <types>
+        <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
+        <fieldType name="boolean" class="solr.BoolField" sorMissingLast="True"/>
+        <fieldType name="int" class="solr.TrieIntField" sorMissingLast="True"/>
+        <fieldType name="float" class="solr.TrieFloatField" sorMissingLast="True"/>
+        <fieldType name="date" class="solr.TrieDateField" sorMissingLast="True"/>
+    </types>
+</schema>
