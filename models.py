@@ -36,7 +36,6 @@ class Student(BaseModel):
     @field_validator('birthdate')
     @classmethod
     def birthdate_date_str(cls, v: str):
-        datetime.strptime(v, "%Y-%m-%d")
         return v
 
     @field_validator('age')
