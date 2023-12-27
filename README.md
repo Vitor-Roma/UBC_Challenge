@@ -1,4 +1,6 @@
-# UBC_Challenge: Desafio Técnico para importação de Dados para o Solr
+# UBC_Challenge: 
+
+## Desafio Técnico para importação de Dados para o Solr
 
 - Formatar o CSV
   - O script deve ler um arquivo CSV fornecido e realizar a formatação dos dados para garantir consistência e correção.
@@ -34,6 +36,8 @@ Após subir o container, acesse a Solr Admin Interface em http://localhost:8983/
 ## Rodar o projeto:
 
 #### Para executar o projeto, siga os passos abaixo:
+
+- Copie e cole o conteúdo do arquivo chamado ".env_sample" para um arquivo chamado ".env"
 
 - Instale as dependências utilizando o comando:
 ```
