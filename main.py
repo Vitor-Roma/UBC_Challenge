@@ -25,18 +25,6 @@ def main():
     print(end - start)
 
 
-def without_threads():
-    Solr(os.getenv('SOLR_URL'), always_commit=True).delete(q="*:*")
-    start = datetime.datetime.now()
-    datapath = os.getenv('DATAPATH')
-    data = pd.read_csv(datapath, engine='pyarrow').replace([np.nan, -np.inf], None)
-    json_data = data.to_dict(orient='records')
-    for item in json_data:
-        csv_process(item)
-    end = datetime.datetime.now()
-    print(end - start)
-
-
 def csv_process(item):
     student_solr_core = Solr(os.getenv('SOLR_URL'), always_commit=True, timeout=999)
     name = item['Nome']
@@ -84,3 +72,15 @@ def csv_process(item):
 
 if __name__ == "__main__":
     main()
+
+
+def without_threads():
+    Solr(os.getenv('SOLR_URL'), always_commit=True).delete(q="*:*")
+    start = datetime.datetime.now()
+    datapath = os.getenv('DATAPATH')
+    data = pd.read_csv(datapath, engine='pyarrow').replace([np.nan, -np.inf], None)
+    json_data = data.to_dict(orient='records')
+    for item in json_data:
+        csv_process(item)
+    end = datetime.datetime.now()
+    print(end - start)
