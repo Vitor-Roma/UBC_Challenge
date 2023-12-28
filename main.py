@@ -13,7 +13,6 @@ load_dotenv()
 
 
 def main():
-    Solr(os.getenv('SOLR_URL'), always_commit=True).delete(q="*:*")
     start = datetime.datetime.now()
     datapath = os.getenv('DATAPATH')
     data = pd.read_csv(datapath, engine='pyarrow').replace([np.nan, -np.inf], None)
@@ -22,7 +21,7 @@ def main():
     with concurrent.futures.ProcessPoolExecutor() as executor:
         [executor.submit(csv_process, item) for item in json_data]
     end = datetime.datetime.now()
-    print(end - start)
+    logging.info(f"{end - start}")
 
 
 def csv_process(item):

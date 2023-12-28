@@ -73,7 +73,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-- Para rodar com uma lista mais extensa de dados, mude o valor do DATAPATH da .env para "./dados.csv"
+- Para rodar com uma lista mais extensa de dados, mude o valor do DATAPATH da .env para "./large_sample.csv"
 
 
 ## Benchmarks
