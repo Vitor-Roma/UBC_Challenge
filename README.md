@@ -22,8 +22,14 @@
 - Python 3.10.12
 
 ## SOLR
-Para iniciar o container do Solr, utilize o comando:
+
+#### De acesso ao volume com o comando:
+```commandline
+sudo chmod 777 -R .docker_data
 ```
+
+Para iniciar o container do Solr, utilize o comando:
+```commandline
 docker compose up
 ```
 ### Acesse a Interface do Solr Admin
@@ -39,18 +45,18 @@ Após subir o container, acesse a Solr Admin Interface em http://localhost:8983/
 
 <h3>Crie e ative seu ambiente virtual com os comandos</h3>
 
-```
+```commandline
 python -m venv env
 ```
 <p>Linux:</p>
 
-```
+```commandline
 source env/bin/activate
 ```
 
 <p>Windows:</p>
 
-```
+```commandline
 env\Scripts\activate
 ```
 
@@ -58,37 +64,23 @@ env\Scripts\activate
 
 
 - Instale as dependências utilizando o comando:
-```
+```commandline
 pip install -r requirements.txt
 ```
 
 - Utilize o comando para rodar o projeto:
-```
+```commandline
 python main.py
 ```
 
 - Para rodar com uma lista mais extensa de dados, mude o valor do DATAPATH da .env para "./dados.csv"
-
-### Caso receba esse erro:
-<img src="screenshots/solr_permission_error.jpeg">
-
-```
-sudo chmod 777 -R .docker_data
-```
-
-### Derrube e suba o docker novamente:
-
-```
-docker compose down
-docker compose up
-```
 
 
 ## Benchmarks
 
 - Para rodar o teste de benchmark, utilize o comando:
 
-```
+```commandline
 richbench --repeat 1 --times 1 benchmarks/
 ```
 <img src="screenshots/benchmark.jpeg">
